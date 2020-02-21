@@ -88,30 +88,33 @@ exports.postSignup = (req, res, next) => {
   if (req.body.password !== req.body.confirmPassword) validationErrors.push({ msg: 'Passwords do not match' });
 
   if (validationErrors.length) {
-    req.flash('errors', validationErrors);
-    return res.redirect('/signup');
+    return res.status(400).json({ status: 0, message: 'Email Already Exists', errors: validationErrors });
   }
   req.body.email = validator.normalizeEmail(req.body.email, { gmail_remove_dots: false });
 
   const user = new User({
     email: req.body.email,
-    password: req.body.password
+    password: req.body.password,
+    accountType: req.body.actype,
+    phonenumber: req.body.phone,
+    profile: {
+      name: req.body.fullname
+    }
   });
 
   User.findOne({ email: req.body.email }, (err, existingUser) => {
     if (err) { return next(err); }
     if (existingUser) {
-      req.flash('errors', { msg: 'Account with that email address already exists.' });
-      return res.redirect('/signup');
+      return res.status(500).json({ status: 0, message: 'Email Already Exists' });
     }
     user.save((err) => {
       if (err) { return next(err); }
-      req.logIn(user, (err) => {
-        if (err) {
-          return next(err);
-        }
-        res.redirect('/');
-      });
+      // req.logIn(user, (err) => {
+      //   if (err) {
+      //     return next(err);
+      //   }
+      // });
+      return res.status(201).json({ status: 1, message: 'Account created!' });
     });
   });
 };
