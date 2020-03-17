@@ -1,2 +1,0 @@
-- Add user signup auth
-- add socket.io
