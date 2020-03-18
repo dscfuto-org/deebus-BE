@@ -63,7 +63,7 @@ exports.register = [
 						}
 					);
 					// Html email body
-					let html = "<p>Please Confirm your Account.</p><p>OTP: "+otp+"</p>";
+					let html = "<p>Please Confirm your Account.</p><h3 align='center'><b>OTP: "+otp+"</b></h3></p>";
 					// Send confirmation email
 					mailer.send(
 						constants.confirmEmails.from, 
