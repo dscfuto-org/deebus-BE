@@ -1,10 +1,11 @@
 var express = require("express");
 var authRouter = require("./auth");
-var bookRouter = require("./book");
+var queueRouter = require("./queue");
+var checkAuth = require("../middlewares/checkAuth");
 
 var app = express();
 
 app.use("/auth/", authRouter);
-app.use("/book/", bookRouter);
+app.use("/queue",checkAuth,  queueRouter);
 
 module.exports = app;

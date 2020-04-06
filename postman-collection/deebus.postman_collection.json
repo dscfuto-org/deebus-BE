@@ -1,0 +1,90 @@
+{
+	"id": "eca2b1ce-ec1e-9adf-7379-2952f6f202a7",
+	"name": "deebus",
+	"description": "",
+	"order": [],
+	"folders": [
+		{
+			"name": "authentication",
+			"description": "",
+			"collectionId": "eca2b1ce-ec1e-9adf-7379-2952f6f202a7",
+			"order": [
+				"086cb074-5756-9a46-34d1-4ea1328c2f45",
+				"504368a9-2d5e-c6d0-9e4e-df2b0813736f"
+			],
+			"owner": "5538389",
+			"folders_order": [],
+			"id": "fb380746-4e1e-543d-fd05-4f4df8627072"
+		}
+	],
+	"folders_order": [
+		"fb380746-4e1e-543d-fd05-4f4df8627072"
+	],
+	"timestamp": 1584537122986,
+	"owner": "5538389",
+	"public": false,
+	"requests": [
+		{
+			"id": "086cb074-5756-9a46-34d1-4ea1328c2f45",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "deebus.herokuapp.com/api/auth/register",
+			"folder": "fb380746-4e1e-543d-fd05-4f4df8627072",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1584537140368,
+			"name": "deebus.herokuapp.com/api/auth/register",
+			"description": "",
+			"collectionId": "eca2b1ce-ec1e-9adf-7379-2952f6f202a7",
+			"responses": [],
+			"rawModeData": "{\n\t\"firstName\":\"Alfred\",\n\t\"lastName\":\"JohnsonAwah\",\n\t\"email\":\"codemarka.dev@gmail.com\",\n\t\"password\":\"Messilo18_\"\n}"
+		},
+		{
+			"id": "504368a9-2d5e-c6d0-9e4e-df2b0813736f",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "deebus.herokuapp.com/api/auth/login",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "eca2b1ce-ec1e-9adf-7379-2952f6f202a7",
+			"data": [],
+			"dataMode": "raw",
+			"name": "login",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1584537893206,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "fb380746-4e1e-543d-fd05-4f4df8627072",
+			"rawModeData": "{\n\t\"email\":\"codemarka.dev@gmail.com\",\n\t\"password\":\"Messilo18_\"\n\t\n}\n"
+		}
+	]
+}
